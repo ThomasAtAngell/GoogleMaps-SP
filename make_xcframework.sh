@@ -50,7 +50,7 @@ function create_xcframework() {
 
 function prepare() {
   # Install Google Maps SDK for iOS.
-  carthage update
+  # carthage update
 
   # Create Build directory if not existing.
   if [ ! -d "$BUILD_DIRECTORY" ]; then
@@ -75,8 +75,8 @@ function build_xcproject_project() {
   create_xcframework "GoogleMaps" "GoogleMaps"
   create_xcframework "GoogleMaps" "GoogleMapsBase"
   create_xcframework "GoogleMaps" "GoogleMapsCore"
-  create_xcframework "GoogleMaps" "GoogleMapsM4B"
-  create_xcframework "GoogleMaps" "GooglePlaces"
+  # create_xcframework "GoogleMaps" "GoogleMapsM4B"
+  # create_xcframework "GoogleMaps" "GooglePlaces"
 
   cleanup
 }
@@ -89,6 +89,8 @@ function help() {
   echo "h     Print this Help."
   echo
 }
+
+set -e
 
 while getopts ":hxg" flag; do
    case "${flag}" in
